@@ -1,0 +1,775 @@
+/* Her legger jeg til det grunnlegende av html dokumentet */
+
+html {
+  scroll-behavior: smooth;  /*dette gjør at når jeg bruker en anchor link i siden min at den scorller pent ned  */
+}
+
+body, html {
+  height: 100dvh; /*denne sier bare hvor stør høyde siden har*/
+}
+
+body{
+  background: linear-gradient(to bottom,#000000, #150050); /*Her gir jeg bakgrunn til alle sidene mine der jeg bruker linear-gradient*/
+}
+
+/* Her lagrer jeg font stylen jeg importete fra google */
+
+.tajawal-medium {
+  font-family: "Tajawal";
+  font-weight: 700;
+  font-style: normal;
+
+  /*dette er bare en font jeg har importert fra google*/
+
+}
+
+/* dette gjør jeg for at dokumentet fra internett siden ikke skal legge til noe automatisk */
+*{
+  margin: 0;
+  padding: 0;
+  font-family: poppins, sans-serif;
+  box-sizing: border-box;
+}
+
+
+/* her ligg min navigasjons bar  */
+.navbar{
+  margin: 0;
+}
+  
+.header-content{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+
+  /*her bruker jeg display flex for å legge alle elementene på en row og legger dem på midten*/
+
+  width: 95%;
+  position: sticky;
+  background-color: black;
+  top:-0;
+  z-index: 1000; /*denne gjør at den legger foran alt i denne diven */
+  border-radius: 25vw;
+
+}
+
+/* her ligger delen som har knappene til forskjellige stedene i html dokumentet mitt */
+
+.header-content nav ul{
+  display: flex;
+  justify-content: right;
+  flex-direction: row;
+  justify-content: right;
+  
+  /* Her legger jeg knappene på en rad etter hverandre*/
+
+  width: 70vw;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 5%;
+
+  /* her gir jeg dem mer plass og fjerner dotten fra listen */
+}
+
+.header-content nav{
+  flex-grow: 1;
+  /* her sier jeg at den kom bli større hvis den trenger */
+}
+
+.header-content .nav a {
+  color: #150050; 
+  text-decoration: none; 
+  padding: 1vw 1vw;
+  background-color: white;
+  border-radius: 25px;
+  transition: background-color 0.3s, color 0.3s;
+
+
+}
+
+.header-content .nav a:hover {
+  color: blue; 
+  background-color: white;
+
+  /* Her forklarer jeg hvis mousen hoverer over at bakgrunnen blir hvis og teksten blir blå */
+
+}
+
+
+/* her ligger scrollbaren som kommer inn når du har scrolla forbi navigasjons barnen på toppen */
+
+.scroll_navbar {
+  position: fixed;
+  top: 0;
+  right: 150vw;
+  top: 12vw; 
+
+  /* Her forklarer jeg hvor side navbaren min er og at den skal være på et sted på skjermen uansett hva */
+  
+  width: 7vw; 
+  height: 25vw;
+  margin: 1vw;
+
+  background-color: #222;
+
+  /* her gir jeg backgrunnen på navbaren */
+
+  transition: right 0.3s;
+  z-index: 1000;
+
+  /* jeg bruker index som det likker foran alle elementene på nettsiden, og bruker transition med javascript så den på 0,3 sekunder går in på høyre side */
+
+  border-radius: 3vw ;
+  gap: 2vw;
+
+  /* her lager jeg en border radius sånn at det blir en oval og gir en gap som bildene ikke er inni hverandre  */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  
+}
+
+.scroll_navbar ul {
+
+  list-style: none;
+  padding: 0;
+  margin: 0; 
+
+  /* Her fjerner jeg punkene fra listene i navbaren og gir padding og marign 0 så nettleseren ikke gir den noe automatisk */
+}
+
+.scroll_navbar ul li {
+  gap:5vw;
+  padding: 8px; 
+  text-align: end;
+  margin-bottom: 2vw; 
+
+  /* her gir jeg den space mellom dem gir dem litt spacing fra kantene av boxen og gir hver av dem en margin bottom */
+}
+
+/* her spesifiserer jeg størelsen av bilde */
+
+.scroll_navbar img {
+  max-width: 50%; 
+  height: auto; 
+  display: block;
+  margin: 0 auto; 
+
+  /* her bruker jeg display block som dem går på linje over hverandre på en rett linje */
+}
+
+/* her sier hvor den skal når jeg skroller ned */
+
+.show-scroll_navbar {
+  right: 0 !important; 
+
+  /* her sier den bare at den skal hvises på høyre */
+}
+
+.scroll_navbar img {
+  transition: transform 0.5s ease;
+
+  /* dette er bare at den ser bedre ut når den kommer in på nettsiden */
+}
+
+/* her sier hva som skjer når jeg hoverer med musen over bildene */
+
+.scroll_navbar img:hover {
+  transform: scale(1.3); 
+  background: purple;
+  cursor: pointer;
+
+  /* her sier jeg at når musen hoverer over bildene at den blir 1.3 ganger så stor og bakgrunnen blir lila og musen blir til en pointer  */
+}
+
+/* her ligger logoen min og navnet mit i navigasjons baren */
+
+.resized-image{
+  width: 10vh;
+  height: auto;
+  
+  /* her gir jeg størellse på logoen min */
+}
+
+/*  her er hvordan jeg får teksten min til å ha to farger */
+
+.Olav{
+  color: #5FBAFF;
+
+  /* her bruker jeg en farge for navnet mitt */
+
+  font-family: "Tajawal";
+  font-weight: 700;
+  font-style: bold;
+
+  /* her bruker jeg fonten jeg tar fra google  */
+
+  margin-left: 1%;
+  margin-right: 0.5%;
+}
+.Eriksen{
+  color: white;
+
+  /* her bruker jeg en annen farge for etternavnet mitt */
+
+  font-family: "Tajawal";
+  font-weight: 700;
+  font-style: bold;
+
+}
+
+
+/* Orginalt hadde jeg at top navbaren følgte med den ned, men jeg følte det ble litt mye så jeg har bare lagt det her til en kommentar */
+
+/* @keyframes stickynav {
+  100% {
+    background-color: rgb(59, 59, 59, 0.6);
+    color: black;
+    box-shadow: 
+    0 0 0.75rem hsl(0 0% 0% / 0.3);
+  }
+}
+
+@keyframes stickynav2{
+  100% {
+    background-color: black;
+    color: white;
+    box-shadow: 
+    0 0 0.75rem hsl(0 0% 0% / 0.3);
+  }
+}
+
+@keyframes stickynav3{
+  100% {
+    background-color: black;
+    color: white;
+    box-shadow: 
+    0 0 0.75rem hsl(0 0% 0% / 0.3);
+  }
+}
+
+@keyframes stickynav4 {
+  100% {
+    color: white;
+  }
+}
+
+@keyframes stickynav5 {
+  100% {
+
+    background-color: rgba(125, 125, 125, 0.6);
+    color: black;
+    box-shadow: 
+    0 0 0.75rem hsl(0 0% 0% / 0.3);
+  }
+} */
+
+
+
+/* Her ligger stylingen av side 1 */
+.container{
+  width: 100%;
+  height: 100vh;
+
+  /* her gir jeg størrelsen på sidene 1-3 */
+}
+
+.slides1{
+  width: 100%;
+  height: 100%;
+  color: #fff;
+
+  /* her sier jeg hvor stor siden er */
+
+  display: grid;
+  grid-template-columns: repeat(3,33dvw);
+  grid-template-rows:12vw 25vw 7.5vw ;
+  
+  /* her ligger jeg grid på første side med elementene mine */
+}
+
+.slides1 h2{
+
+  font-family: "Tajawal";
+  font-weight: 700;
+  font-style: bold;
+  font-size: clamp(1.8rem,6vw,3vw);
+
+  /* her gir jeg font og en font size med clamp som tilpasser ser størrelse på hvor stor skjermen din er */
+
+  grid-column-start: 2;
+  grid-column-end: 2;
+
+  /* her sier jeg hvor elementen ligger i griden */
+
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* her putter den sentralt i griden */
+
+  margin-bottom: 5dvh;
+}
+
+.slides1 .tekster{
+
+  font-family: "Tajawal";
+  font-weight: 600;
+  font-style: italic;
+  font-size: clamp(0.5rem, 1.5vw,2vw);
+
+  /* her igjen gir jeg font fra googl */
+
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row: span 2 / 4;
+
+  /* her sier jeg hvor på griden den ligger */
+  
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+
+  /* her bruker jeg display flex til å putte den er spesifikt sted i griden og putter tekstene i en column */
+
+  gap: 5%;
+  margin: 10%;
+
+  /* her gir jeg space mellom tekstene */
+  
+}
+
+.om_meg_bilde {
+  width: clamp(20%,65%,75%);
+  height: auto;
+
+  /* her gir jeg størrelse på bilde mitt */
+  
+  grid-column-start: 3; 
+  grid-column-end: 3;
+  grid-row: span 3;
+
+  /* her spesifiserer jeg hvor bildet mitt er */
+
+  margin-top: 20vh;
+  margin-left: -15vh;
+
+  /* her blir jeg mer spesifikk hvor den ligger med margin */
+
+  display: flex;
+  justify-content: start ;
+  align-items: end;
+  
+  /* samme gjør jeg her med display flex for å si hvor i griden den er */
+
+}
+
+
+
+/* her ligger sylingen av side 2 */
+
+.slides2{
+  width: 100%;
+  height: 100%;
+  color: #fff;
+
+  /* her sier jeg størrelse og gir en tekst farge på side 2 */
+
+  display: grid;
+  grid-template-columns: auto 33dvw auto;
+  grid-template-rows: 10vh 75vh;
+
+  /* her bruker jeg grid på siden for å putte mine elementer som jeg vill */
+  
+
+}
+
+.slides2 h2{
+  font-family: "Tajawal";
+  font-weight: 700;
+  font-style: bold;
+  font-size: clamp(1.8rem,6vw,3vw);
+
+  /* her gir jeg fonten fra google igjen og bruker clamp igjen */
+
+  grid-column:span 3;
+  grid-row: span 1;
+
+  /* her sier jeg hvor på griden den ligger */
+
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* her bruker jeg flex for å sentrere tittelen på siden */
+
+  margin-bottom: 5dvh;
+}
+
+.serviser {
+  grid-column-start: 1 ;
+  grid-column-end: 4;
+  grid-row-start: 2 ;
+  grid-row-end: 3;
+
+  /* her spesfiserer jeg hvor den ligger på siden med grid */
+
+  display: grid;
+  grid-template-columns: repeat(5, 20%);
+  grid-template-rows: 50% 50% ;
+
+  /* her lager jeg en ny grid der jeg skal ha mine elementer */
+}
+
+/* her spesifiserer jeg størellsen på bilde */
+
+.serviser img{
+  width: 100%;
+  height: auto;
+
+  /* her gir jeg en størelse på bildene mine */
+}
+
+div.box2 img{
+  width: 90%;
+  /* her gir jeg det andre bilde en egen størrelse pga den er større enn de to andre */
+}
+
+
+div.box1 {
+
+  grid-column: span 1 / 3;
+
+  /* her sier jeg hvor den ligger i griden */
+
+  background: #585866;
+  color: white;
+  border-radius: 5vw;
+  font-family: "Tajawal";
+  font-weight: 500;
+  font-style: bold;
+  font-size: 1.25rem;
+  text-align: center;
+
+  /* her styler jeg alt inni boksen */
+  
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  /* her bruker jeg grid til å putte bilde på toppen og teksten under */
+
+}
+
+div.box2{
+
+  grid-column: span 1/5;
+
+  /* her spesifisere jeg hvor elemente ligger i griden */
+
+  background: #585866;
+  color: white;
+  border-radius: 5vw;
+  font-family: "Tajawal";
+  font-weight: 500;
+  font-style: bold;
+  font-size: 1.25rem;
+  text-align: center;
+
+  /* her styler jeg elemnte og det inni */
+  
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  /* her bruker jeg grid til å putte bilde på toppen og teksten under  */
+
+}
+
+div.box3{
+  
+  grid-column: span 1 / 4;
+
+  /* her sier jeg hvor den ligger i griden */
+
+  background: #585866;
+  color: white;
+  border-radius: 5vw;
+  font-family: "Tajawal";
+  font-weight: 500;
+  font-style: bold;
+  font-size: 1.25rem;
+  text-align: center;
+
+  /* her styler jeg elemente og det inni */
+  
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  /* her bruker jeg grid til å putte bilde på toppen og teksten under */
+
+}
+
+/* Here ligger stylingen av side 3  */
+
+.slides3{
+  width: 100%;
+  height: 90%;
+  color: #fff;
+
+  /* her gir jeg størrelse på siden og gir farge på tekstene i dokumentet */
+
+  display: grid;
+  grid-template-columns: repeat(2,auto);
+  grid-template-rows:10vh 39vh 39vh;
+  
+  /* her bruker jeg grid for å plassere elementene mine i */
+  
+}
+
+.slides3 h2{
+
+  grid-column: span 2;
+
+  /* her sier jeg hvor elementet er i griden */
+
+  font-family: "Tajawal";
+  font-weight: 700;
+  font-style: bold;
+  font-size: clamp(1.8rem,6vw,3vw);
+
+  /* her styler jeg elementet og det inni */
+
+  display: flex;
+  justify-content: center;
+
+  /* her bruker jeg grid for å sentrere elementet inni */
+}
+
+/* her spesifierer jeg størelser av bildene */
+
+.slides3 img {
+  width: 100%;
+  height: auto;
+  max-width: 100%; 
+  max-height: 100%; 
+
+  /* her gir jeg størrelse på bildene */
+
+  border: 2vh solid;
+  border-color:#1a015f;
+
+  /* her gir jeg dem en border med en farge */
+}
+
+div.slides3 img{
+  height: auto;
+  width: 50%;
+
+  /* her gir jeg høyde for bildene igjen */
+}
+
+.slides3 .bilde1s3 {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 2;
+  grid-row-end: 2;
+
+  /* her sier jeg hvor i griden den ligger */
+
+  display: flex;
+  align-items: center;
+  justify-content: end;
+
+  /* her bruker jeg flex for å putte den nærmere de andre bildene */
+  
+}
+
+.slides3 .bilde1s3 img{
+  border-top: 6vh solid;
+  border-bottom: 6vh solid;
+  border-color:#150050;
+
+  /* her gir jeg bilde en border for at den skal ende samtidig som de andre elementene */
+}
+
+
+.slides3 .bilde2s3{
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 2;
+
+  /* her sier jeg hvor i griden den ligger */
+
+  display: flex;
+  align-items: end;
+  justify-content: start;
+
+  /* her bruker jeg flex for å putte elemente nærmere de andre bildene */
+}
+
+
+.slides3 .bilde3s3{
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 3;
+  grid-row-end: 3;
+  
+  /* Her sier jeg hvor den skal ligge i griden */
+
+  display: flex;
+  align-items: start;
+  justify-content: end;
+
+  /* her bruker jeg flex for å putte elemente nærmere de andre bildene */
+}
+
+
+.slides3 .bilde4s3{
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 3;
+  grid-row-end: 3;
+
+  /* her sier jeg hvor den skal være i griden */
+
+  display: flex;
+  align-items: center;
+  justify-content: start;
+
+  /* her bruker jeg flex for å putte elemente nærmere bildene i de andre boxene */
+
+}
+
+.slides3 .bilde4s3 img{
+  border-bottom: 8vh solid;
+  border-color:#150050;
+
+  /* her gir jeg den en egen border størrelse som den slutter sammen med de andre bildene */
+}
+
+/* her ligger stylingen av footer eller side 4 med min kontakt informasjon */
+
+
+.container2{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows:  5vh, fit-content; 
+
+  /* her lager jeg en grid som jeg skal putte min kontakt info i */
+
+  bottom: 0;
+  width: 100%;
+  height: 0vh;
+  gap: 0;
+  color: #fff;
+
+  /* her gir jeg en størrelse på siden og gir farge på tekster  */
+
+}
+
+#seksjon4{
+  grid-column: span 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+
+  /* her sier jeg hvor titelen ligger på footeren */
+  
+
+  display: flex;
+  justify-content: center;
+
+  /* her senterer jeg elemnte med flex */
+ 
+  width: 100%;
+  gap: 0;
+  color: #fff;
+
+  /* her gir jeg størrelse på elelmentet */
+}
+
+.container2 ul{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+
+  /* her bruker jeg flex for å lage en kolumn på hver av de forskjellige måten å kontakte med  */
+  
+  width: 100%;
+  list-style: none;
+
+  /* her fjerner jeg bulletpointe fra listen og gir den en størrelse i width */
+  
+
+  margin: 0;
+  padding: 0;
+  gap: 25%;
+
+  /* her sier jeg hvor mye gap det må være mellom dem */
+  
+}
+
+/* her lager jeg id'der for hver seksjon av informasjon som jeg lett kan legge ting senere hvis nødvendigSS */
+
+#kontakt-tlf{
+
+  grid-column: 1;
+  grid-row: 2;
+
+  /* her sier jeg hvor i griden elemnte ligger */
+
+}
+
+#kontakt-adresse{
+  
+  grid-column: 2;
+  grid-row: 2;
+
+  /* her sier jeg hvor elemente ligger i griden  */
+
+  border-left: 5px solid white;
+  border-right: 5px solid white;
+
+  /* her gir jeg den en border på hver side for å skille kontakt infoen */
+
+  display: flex;
+  flex-direction: column;
+
+  /* jeg sier jeg at det skal være en coloumn med flexbox */
+
+}
+
+ul.kontakt-adresse{
+  border-left: 5px solid white;
+  border-right: 5px solid white;
+}
+
+#kontakt-email{
+
+  grid-column: 3;
+  grid-row: 2;
+
+  /* her sier jeg hvor den skal være i griden */
+
+  display: flex;
+  flex-direction: column ;
+
+  /* her sier jeg at det skal være en kolumn i elemente */
+  
+}
+
